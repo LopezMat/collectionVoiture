@@ -1,0 +1,18 @@
+services:
+
+  # container de bdd
+  mariacar:
+    image: mariadb:latest
+    container_name: mariacar
+    environment:
+      MARIADB_ROOT_PASSWORD: admin
+      MARIADB_DATABASE: car
+      MARIADB_USER: carcfa
+      MARIADB_PASSWORD: admin
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mariadb:/var/lib/mysql
+
+volumes:
+  mariacardb:
